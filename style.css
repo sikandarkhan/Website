@@ -1,0 +1,49 @@
+body{
+    background-color:#FFE3E3;
+}
+a{
+    color:#EC6530;
+}
+pre{
+    color:#EC6530;
+}
+input{
+    color:black;
+    background-color:#8FDDDF;
+    border: ;
+}
+button{
+    background-color:#EC6530;
+    color:black;
+
+}
+button:hover{
+    color: white;
+    cursor: pointer;
+}
+#cno:hover{
+    color: brown;
+}
+#cno{
+    color: black;
+}
+a:hover{
+    color: brown;
+}
+#gno:hover{
+    color: brown;
+}
+#gno{
+    color: black;
+}
+#tq:hover{
+    color: brown;
+}
+#tq{
+    color: black;
+} 
+#sl:hover{
+    color: brown;
+}   
+
+
