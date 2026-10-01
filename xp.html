@@ -1,45 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <!-- The crucial line for responsiveness -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experience & skills</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Experience & Skills</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
+
+
     <form align="center">
 
-    <pre><h1><a href="index.html" style="text-decoration: none;">HOME</a>               <a href="About.html" style="text-decoration: none;">ABOUT</a>               <a href="Services.html" style="text-decoration: none;">SERVICES</a>               <a href="Contact.html" style="text-decoration: none;">CONTACT</a>               SEARCH <input type="search" placeholder="Search" ></h1></pre></form>
+        <pre><h1>
+<a href="index.html" style="text-decoration: none;">HOME</a>               <a href="About.html" style="text-decoration: none;">ABOUT</a>               <a href="Services.html" style="text-decoration: none;">SERVICES</a>               <a href="Contact.html" style="text-decoration: none;">CONTACT</a>               SEARCH <input type="search" placeholder="Search">
+        </h1></pre>
+
+    </form>
+
+
     <hr>
-    <header align="center"><h1>WELCOME TO SIKANDAR WEBSITE</h1><hr><br><h2>Register Yourself Below...!</h2><br><h2>Experience & skills</h2></header>
+
+
+    <header align="center">
+
+        <h1>WELCOME TO SIKANDAR WEBSITE</h1>
+
+        <hr>
+
+        <br>
+
+        <h2>Register Yourself Below...!</h2>
+
+        <br>
+
+        <h2>Experience & Skills</h2>
+
+    </header>
+
+
     <main align="center">
-        <h4>Primary Skills</h4>
-        <label id="101">
-            <input  type="checkbox" value="HTML/CSS" name="skiils" id="101">HTML/CSS</label><br>
-        <label id="102">
-            <input  type="checkbox" value="JAVASCRIPT" name="skiils" id="102">JAVASCRIPT</label><br>
-        <label id="103">
-            <input  type="checkbox" value="REACT" name="skiils" id="103">REACT</label> <br>   
-        <label id="104">
-            <input  type="checkbox" value="NODE.JS" name="skiils" id="104">NODE.JS</label><br>
-        <label id="105">
-            <input  type="checkbox" value="PYTHON" name="skiils" id="105">PYTHON</label>   <br>     
-        <label id="106">
-            <input  type="checkbox" value="SQL" name="skiils" id="106">SQL</label><br><br>
-        <h4>Upload your Resume(.pdf/.docx Supported)</h4>
-        <input type="file" accept=".pdf, .docx" id="54">
-        <h4>Short Bio / Cover Note:</h4>
-        <textarea placeholder="Tell us About Yourself in 400 Chars limit" maxlength="400" rows="6" cols="50" required></textarea>
-        <br><br>
-        <label id="88">
-            <input type="checkbox" value="I Agree to The Privacy Policy" name="prv" id="88">I Agree to The Privacy Policy
-        </label><br><br>
-        <a href="appli.html"><button>< Edit</button></a>
-        <button>Submit</button>
-        <a href="index.html"><button>Reset</button></a>
-        
+
+
+        <form id="skillsForm">
+
+
+            <h4>Primary Skills</h4>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="HTML/CSS"
+                    name="skills"
+                >
+                HTML/CSS
+            </label>
+
+            <br>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="JAVASCRIPT"
+                    name="skills"
+                >
+                JAVASCRIPT
+            </label>
+
+            <br>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="REACT"
+                    name="skills"
+                >
+                REACT
+            </label>
+
+            <br>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="NODE.JS"
+                    name="skills"
+                >
+                NODE.JS
+            </label>
+
+            <br>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="PYTHON"
+                    name="skills"
+                >
+                PYTHON
+            </label>
+
+            <br>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    value="SQL"
+                    name="skills"
+                >
+                SQL
+            </label>
+
+
+            <br><br>
+
+
+            <h4>
+                Upload your Resume
+                (.pdf/.docx Supported)
+            </h4>
+
+
+            <input
+                type="file"
+                id="resume"
+                accept=".pdf,.docx"
+            >
+
+
+            <h4>Short Bio / Cover Note:</h4>
+
+
+            <textarea
+                id="bio"
+                placeholder="Tell us About Yourself in 400 Chars limit"
+                maxlength="400"
+                rows="6"
+                cols="50"
+                required
+            ></textarea>
+
+
+            <br><br>
+
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="privacy"
+                    required
+                >
+
+                I Agree to The Privacy Policy
+
+            </label>
+
+
+            <br><br>
+
+
+            <button
+                type="button"
+                onclick="editApplication()">
+                &lt; Edit
+            </button>
+
+
+            <button type="submit">
+                Submit
+            </button>
+
+
+            <button
+                type="button"
+                onclick="resetApplication()">
+                Reset
+            </button>
+
+
+        </form>
+
 
     </main>
+
+
+    <script>
+
+
+        /*
+        YOUR GOOGLE APPS SCRIPT URL
+        */
+
+        const GOOGLE_SCRIPT_URL =
+            "YOUR_GOOGLE_SCRIPT_URL";
+
+
+
+        /*
+        Edit previous application
+        */
+
+        function editApplication() {
+
+            window.location.href = "appli.html";
+
+        }
+
+
+
+        /*
+        Reset everything
+        */
+
+        function resetApplication() {
+
+            localStorage.clear();
+
+            document
+                .getElementById("skillsForm")
+                .reset();
+
+            alert("Form has been reset.");
+
+        }
+
+
+
+        /*
+        FINAL SUBMIT
+        */
+
+        document
+            .getElementById("skillsForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                /*
+                Get selected skills
+                */
+
+                let selectedSkills = [];
+
+
+                document
+                    .querySelectorAll(
+                        'input[name="skills"]:checked'
+                    )
+                    .forEach(function(skill) {
+
+                        selectedSkills.push(skill.value);
+
+                    });
+
+
+                /*
+                Make sure at least one skill is selected
+                */
+
+                if (selectedSkills.length === 0) {
+
+                    alert("Please select at least one skill.");
+
+                    return;
+
+                }
+
+
+                /*
+                Get bio
+                */
+
+                let bio =
+                    document.getElementById("bio").value;
+
+
+                /*
+                Check privacy
+                */
+
+                let privacy =
+                    document.getElementById("privacy").checked;
+
+
+                if (!privacy) {
+
+                    alert(
+                        "Please agree to the Privacy Policy."
+                    );
+
+                    return;
+
+                }
+
+
+                /*
+                Create data
+                */
+
+                let data = new URLSearchParams();
+
+
+                /*
+                Personal Information
+                */
+
+                data.append(
+                    "firstName",
+                    localStorage.getItem("firstName") || ""
+                );
+
+
+                data.append(
+                    "lastName",
+                    localStorage.getItem("lastName") || ""
+                );
+
+
+                data.append(
+                    "username",
+                    localStorage.getItem("username") || ""
+                );
+
+
+                data.append(
+                    "phone",
+                    localStorage.getItem("phone") || ""
+                );
+
+
+                data.append(
+                    "email",
+                    localStorage.getItem("email") || ""
+                );
+
+
+                /*
+                Application Details
+                */
+
+                data.append(
+                    "role",
+                    localStorage.getItem("role") || ""
+                );
+
+
+                data.append(
+                    "salary",
+                    localStorage.getItem("salary") || ""
+                );
+
+
+                data.append(
+                    "startDate",
+                    localStorage.getItem("startDate") || ""
+                );
+
+
+                data.append(
+                    "portfolio",
+                    localStorage.getItem("portfolio") || ""
+                );
+
+
+                /*
+                Skills
+                */
+
+                data.append(
+                    "skills",
+                    selectedSkills.join(", ")
+                );
+
+
+                /*
+                Bio
+                */
+
+                data.append(
+                    "bio",
+                    bio
+                );
+
+
+                /*
+                Privacy
+                */
+
+                data.append(
+                    "privacy",
+                    "Yes"
+                );
+
+
+                /*
+                Send everything to Google Apps Script
+                */
+
+                fetch(
+                    GOOGLE_SCRIPT_URL,
+                    {
+                        method: "POST",
+                        body: data
+                    }
+                )
+
+
+                .then(function(response) {
+
+                    return response.text();
+
+                })
+
+
+                .then(function(result) {
+
+                    console.log(result);
+
+
+                    alert(
+                        "Application submitted successfully!"
+                    );
+
+
+                    /*
+                    Clear saved information
+                    */
+
+                    localStorage.clear();
+
+
+                    /*
+                    Return to home
+                    */
+
+                    window.location.href =
+                        "index.html";
+
+                })
+
+
+                .catch(function(error) {
+
+                    console.error(error);
+
+
+                    alert(
+                        "Something went wrong. Please try again."
+                    );
+
+                });
+
+            });
+
+
+    </script>
+
+
 </body>
+
 </html>
